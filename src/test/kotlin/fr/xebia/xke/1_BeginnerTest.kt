@@ -7,7 +7,7 @@ class Beginner_PropertiesTest : StringSpec({
 
     val expectedHost = "xebia.fr"
     "${::host.name} should be initialized to $expectedHost" {
-        host shouldBe expectedHost
+        host.shouldBe(expectedHost)
     }
 
     val expectedPort = 443

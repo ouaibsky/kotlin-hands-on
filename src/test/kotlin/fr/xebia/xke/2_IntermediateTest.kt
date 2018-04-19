@@ -109,6 +109,10 @@ class Intermediate_GenericsVarianceTest : StringSpec({
         override fun receive(t: Text) = throw UnsupportedOperationException()
     }
 
+    var receiverSms = object : Receiver<SMS> {
+        override fun receive(t: SMS) = throw UnsupportedOperationException()
+    }
+
     "${::textSender.name} should return its parameter since parameter type and return type are covariant" {
         textSender(sender) shouldBe sender
     }
